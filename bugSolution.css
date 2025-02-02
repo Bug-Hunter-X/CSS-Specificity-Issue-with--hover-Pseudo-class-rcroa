@@ -1,0 +1,26 @@
+The solution is to adjust the CSS specificity by ensuring that the `.container:hover` rule has higher specificity or precedence than `.container a:hover`. Here's the corrected CSS:
+
+```css
+.container {
+  width: 200px;
+  height: 200px;
+  background-color: lightgray;
+}
+
+.container a {
+  display: block;
+  width: 100px;
+  height: 100px;
+  background-color: lightcoral;
+}
+
+.container:hover {
+  background-color: lightblue;
+}
+
+.container a:hover {
+  background-color: lightgreen;
+}
+```
+
+By simply rearranging the order, the `.container:hover` rule is now processed *after* the `.container a:hover` rule so it takes precedence.
