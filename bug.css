@@ -1,0 +1,26 @@
+The following CSS code snippet demonstrates an uncommon issue where the expected behavior of the `:hover` pseudo-class doesn't work as intended due to incorrect specificity:
+
+```css
+.container {
+  width: 200px;
+  height: 200px;
+  background-color: lightgray;
+}
+
+.container:hover {
+  background-color: lightblue;
+}
+
+.container a {
+  display: block;
+  width: 100px;
+  height: 100px;
+  background-color: lightcoral;
+}
+
+.container a:hover {
+  background-color: lightgreen; 
+}
+```
+
+Hovering over the `a` element within the `.container` only changes the background color of the `a` element. Hovering over the `.container` does not change its background color, despite the seemingly higher priority `.container:hover` rule.
